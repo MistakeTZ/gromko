@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --black: #050507;
+  --black-soft: #09090D;
+  --surface: #101017;
+  --surface-hover: #15151E;
+  
+  --white: #F7F7FA;
+  --text-secondary: #A7A7B3;
+  --text-muted: #686873;
+
+  --neon-pink: #FF00AC;
+  --neon-cyan: #08CEFD;
+  --neon-violet: #7C3CFF;
+
+  --neon-gradient: linear-gradient(90deg, #FF00AC 0%, #08CEFD 100%);
+  --neon-gradient-vertical: linear-gradient(180deg, #FF00AC 0%, #08CEFD 100%);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050507;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1c1c28;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2a2a3c;
+}
+
+/* Base Body Styles */
+body {
+  background-color: var(--black);
+  color: var(--white);
+  font-family: 'Manrope', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Display Font Utility */
+.font-display {
+  font-family: 'Unbounded', sans-serif;
+}
+
+/* Subtle Neon Glow Backgrounds */
+.bg-glow-section {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255, 0, 172, 0.08), transparent 35%),
+    radial-gradient(circle at 85% 75%, rgba(8, 206, 253, 0.07), transparent 35%),
+    #050507;
+}
+
+.bg-glow-subtle {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(8, 206, 253, 0.06), transparent 50%),
+    #09090D;
+}
+
+.bg-glow-pink-accent {
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255, 0, 172, 0.12), transparent 60%),
+    #050507;
+}
+
+/* Gradient Text */
+.text-neon-gradient {
+  background: linear-gradient(90deg, #FF00AC 0%, #08CEFD 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-neon-pink {
+  color: #FF00AC;
+}
+
+.text-neon-cyan {
+  color: #08CEFD;
+}
+
+/* Glassmorphism Panels */
+.glass-panel {
+  background: rgba(16, 16, 23, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-panel-hover:hover {
+  background: rgba(21, 21, 30, 0.85);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Neon Borders */
+.border-neon-gradient {
+  border-image: linear-gradient(90deg, #FF00AC 0%, #08CEFD 100%) 1;
+}
+
+.border-neon-pink-subtle {
+  border-color: rgba(255, 0, 172, 0.35);
+}
+
+.border-neon-cyan-subtle {
+  border-color: rgba(8, 206, 253, 0.35);
+}
+
+/* Pulsing Neon Dot */
+@keyframes neon-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+    box-shadow: 0 0 12px #08CEFD, 0 0 4px #08CEFD;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.75;
+    box-shadow: 0 0 20px #08CEFD, 0 0 8px #08CEFD;
+  }
+}
+
+.animate-neon-pulse {
+  animation: neon-pulse 2s infinite ease-in-out;
+}
+
+/* Hide scrollbar for carousel but keep functionality */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
