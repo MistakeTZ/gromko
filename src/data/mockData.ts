@@ -28,6 +28,8 @@ export const WEEK_SCHEDULE: WeekDaySchedule[] = [
     tagline: 'Крафтовые настойки по спеццене!',
     details: [
       'Только по вторникам в #ГРОМКО все крафтовые настойки от нашего бармена по 80 рублей за ШОТ!',
+      'Большой выбор авторских вкусов и сетов для компании',
+      'Караоке и отличная музыка всю ночь',
     ],
     badge: '80 ₽ / ШОТ',
     isSpecial: true,
@@ -40,8 +42,14 @@ export const WEEK_SCHEDULE: WeekDaySchedule[] = [
     fullName: 'Среда',
     workingHours: '19:00 — 04:00',
     hasPromo: false,
-    tagline: '',
-    details: [],
+    tagline: 'Караоке нон-стоп & Драйв',
+    details: [
+      'Поем любимые треки без задержек на концертной системе Evolution Pro2',
+      'Вход свободный всю ночь с 19:00 до 04:00',
+      'Авторские коктейли и новинки от нашего шеф-повара',
+    ],
+    badge: 'КАРАОКЕ NON-STOP',
+    image: 'https://static.tildacdn.com/tild3464-3930-4663-a431-656165633663/GadoXKLedP4.jpg',
   },
   {
     id: 'thu',
@@ -67,8 +75,15 @@ export const WEEK_SCHEDULE: WeekDaySchedule[] = [
     fullName: 'Пятница',
     workingHours: '19:00 — 06:00',
     hasPromo: false,
-    tagline: '',
-    details: [],
+    tagline: 'Громкая пятница до 06:00!',
+    details: [
+      'Главная вокальная вечеринка недели до самого рассвета',
+      'Зажигательные танцы, живой звук и мощная клубная атмосфера',
+      'Кухня и авторский бар работают нон-стоп до 06:00',
+    ],
+    badge: 'PARTY ДО 06:00',
+    isSpecial: true,
+    image: 'https://static.tildacdn.com/tild3561-6166-4638-b130-356162396138/K0NDykXZTh8.jpg',
   },
   {
     id: 'sat',
@@ -77,8 +92,15 @@ export const WEEK_SCHEDULE: WeekDaySchedule[] = [
     fullName: 'Суббота',
     workingHours: '19:00 — 06:00',
     hasPromo: false,
-    tagline: '',
-    details: [],
+    tagline: 'Субботний вокальный отрыв!',
+    details: [
+      'Легендарный субботний драйв с лучшими голосами города',
+      'Танцпол, световое шоу и тысячи любимых песен в караоке',
+      'Рекомендуем бронировать столы заранее!',
+    ],
+    badge: 'WEEKEND PRIME',
+    isSpecial: true,
+    image: 'https://static.tildacdn.com/tild3836-3235-4231-b662-393264646232/Jy7Pi9GlrQk.jpg',
   },
   {
     id: 'sun',
@@ -87,8 +109,14 @@ export const WEEK_SCHEDULE: WeekDaySchedule[] = [
     fullName: 'Воскресенье',
     workingHours: '19:00 — 04:00',
     hasPromo: false,
-    tagline: '',
-    details: [],
+    tagline: 'Воскресный вокал & Релакс',
+    details: [
+      'Уютный душевный вечер перед началом новой рабочей недели',
+      'Исполнение любимых треков в расслабляющей атмосфере',
+      'Специальные авторские чаи, вина и десерты от шефа',
+    ],
+    badge: 'CHILL & VOCAL',
+    image: 'https://static.tildacdn.com/tild3664-6662-4465-a166-633335653437/qNMw0v4Cru8.jpg',
   },
 ];
 
@@ -419,7 +447,7 @@ export const BAR_ITEMS: BarItem[] = [
     country: 'Ирландия',
     category: 'whiskey',
     isSignature: true,
-    image: 'https://static.tildacdn.com/tild3961-6130-4866-a434-343465626232/photo.jpg',
+    image: 'https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'b-jack-daniels',
@@ -1163,7 +1191,7 @@ export const VENUE_INFO = {
   tgUrl: 'https://t.me',
   instagramUrl: 'https://instagram.com',
   coordinates: {
-    lat: 56.9972,
-    lng: 40.9714,
+    lat: 56.995019,
+    lng: 40.985989,
   },
 };

@@ -18,10 +18,10 @@ export const KitchenMenu: React.FC<KitchenMenuProps> = ({ onOpenFullMenu }) => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column: Large Authentic Food Photo */}
           <div className="lg:col-span-6 relative">
-            <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl group">
+            <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl group cursor-pointer" onClick={() => onOpenFullMenu('kitchen')}>
               <img
-                src="https://static.tildacdn.com/tild6364-6139-4636-b662-306162303964/photo.jpg"
-                alt="Меню кухни #ГРОМКО"
+                src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1200&q=80"
+                alt="Кухня и гастрономия #ГРОМКО"
                 className="w-full h-[460px] sm:h-[580px] object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />

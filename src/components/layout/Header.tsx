@@ -62,10 +62,6 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
               alt="Лого #ГРОМКО"
               className="h-10 sm:h-12 w-auto object-contain transition-transform group-hover:scale-105"
             />
-            <span className="font-display font-black text-xl sm:text-2xl tracking-tighter text-white group-hover:text-neon-cyan transition-colors hidden xs:inline-block sm:inline-block">
-              <span className="text-neon-pink group-hover:drop-shadow-[0_0_12px_#FF00AC]">#</span>
-              ГРОМКО
-            </span>
           </a>
 
           {/* Desktop Navigation */}

@@ -105,14 +105,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
           <span className="text-white/20">/</span>
           <span>{todayHours}</span>
         </div>
-
-        <button
-          onClick={handleScrollToGallery}
-          className="hidden sm:flex items-center gap-2 hover:text-white transition-colors"
-        >
-          <span>ЛИСТАЙТЕ ВНИЗ</span>
-          <ChevronDown className="w-3.5 h-3.5 text-[#08CEFD] animate-bounce" />
-        </button>
       </div>
     </section>
   );

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPin, Navigation, ExternalLink, ZoomIn, ZoomOut, Layers } from 'lucide-react';
+import { Navigation, ExternalLink, ZoomIn, ZoomOut, Layers } from 'lucide-react';
 import { VENUE_INFO } from '../../data/mockData';
 
 interface DarkMapProps {
@@ -57,9 +57,6 @@ export const DarkMap: React.FC<DarkMapProps> = ({
       {/* Center Marker Pin Badge (Custom Neon Marker) */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center pointer-events-none z-10">
         <div className="absolute w-16 h-16 rounded-full bg-neon-pink/25 animate-ping opacity-60 pointer-events-none" />
-        <div className="relative p-3 rounded-2xl bg-gradient-to-r from-[#FF00AC] to-[#08CEFD] text-white shadow-[0_0_25px_rgba(255,0,172,0.7)] flex items-center justify-center transform -translate-y-4">
-          <MapPin className="w-5 h-5 fill-white text-transparent" />
-        </div>
 
         <div className="mt-1 px-3 py-1 rounded-xl bg-black/90 border border-white/20 backdrop-blur-md text-center shadow-xl">
           <div className="font-display font-black text-xs text-white">#ГРОМКО</div>

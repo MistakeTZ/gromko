@@ -81,45 +81,35 @@ export const WeeklySchedule: React.FC<WeeklyScheduleProps> = ({ onOpenBooking })
           })}
         </div>
 
-        {/* Focused Day Presentation */}
-        <div className="mt-10 p-6 sm:p-10 rounded-3xl bg-surface/50 border border-white/10 backdrop-blur-md">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            {/* Promo Photo / Day Visual */}
-            {selectedDay.hasPromo && selectedDay.image ? (
-              <div className="lg:col-span-5 h-64 sm:h-80 rounded-2xl overflow-hidden border border-white/10 relative shadow-2xl">
-                <img
-                  src={selectedDay.image}
-                  alt={selectedDay.tagline || selectedDay.fullName}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                <div className="absolute bottom-4 left-4">
-                  <span className="text-xs font-mono font-bold uppercase text-neon-pink bg-black/80 px-2.5 py-1 rounded border border-neon-pink/30">
-                    {selectedDay.badge || 'АКЦИЯ'}
-                  </span>
-                </div>
+        {/* Focused Day Presentation (Consistent Height & Structure) */}
+        <div className="mt-10 p-6 sm:p-10 rounded-3xl bg-surface/50 border border-white/10 backdrop-blur-md min-h-[440px] sm:min-h-[460px] lg:min-h-[420px] flex flex-col justify-center transition-all duration-300">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+            {/* Promo / Day Visual Image */}
+            <div className="lg:col-span-5 h-64 sm:h-80 lg:h-auto min-h-[260px] sm:min-h-[320px] rounded-2xl overflow-hidden border border-white/10 relative shadow-2xl group">
+              <img
+                src={selectedDay.image}
+                alt={selectedDay.tagline || selectedDay.fullName}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
+              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-2">
+                <span
+                  className={`text-xs font-mono font-bold uppercase px-2.5 py-1 rounded border backdrop-blur-md ${
+                    selectedDay.isSpecial || selectedDay.hasPromo
+                      ? 'text-neon-pink bg-black/80 border-neon-pink/40'
+                      : 'text-[#08CEFD] bg-black/80 border-[#08CEFD]/40'
+                  }`}
+                >
+                  {selectedDay.badge || 'ПРОГРАММА'}
+                </span>
+                <span className="text-[11px] font-mono text-white/80 bg-black/60 px-2 py-0.5 rounded border border-white/10">
+                  {selectedDay.workingHours}
+                </span>
               </div>
-            ) : (
-              <div className="lg:col-span-5 h-56 sm:h-72 rounded-2xl bg-white/[0.02] border border-white/10 p-8 flex flex-col justify-between">
-                <div className="text-xs font-mono text-text-muted uppercase tracking-widest">
-                  СТАНДАРТНАЯ ПРОГРАММА
-                </div>
-                <div>
-                  <div className="font-display font-black text-3xl sm:text-4xl text-white">
-                    {selectedDay.fullName.toUpperCase()}
-                  </div>
-                  <div className="text-sm font-mono text-[#08CEFD] mt-2">
-                    Работаем: {selectedDay.workingHours}
-                  </div>
-                </div>
-                <div className="text-xs text-text-secondary">
-                  Концертная караоке-система Evolution Pro2 · Вход свободный
-                </div>
-              </div>
-            )}
+            </div>
 
             {/* Day Info & Offer Details */}
-            <div className="lg:col-span-7 flex flex-col justify-between">
+            <div className="lg:col-span-7 flex flex-col justify-between min-h-[280px] sm:min-h-[320px]">
               <div>
                 <div className="flex items-center gap-3 mb-3">
                   <span className="text-xs font-bold font-display uppercase tracking-widest text-[#08CEFD]">
@@ -135,17 +125,19 @@ export const WeeklySchedule: React.FC<WeeklyScheduleProps> = ({ onOpenBooking })
                   )}
                 </div>
 
-                <h3 className="text-2xl sm:text-4xl font-display font-black text-white uppercase leading-tight tracking-tight">
-                  {selectedDay.hasPromo && selectedDay.tagline
-                    ? selectedDay.tagline
-                    : 'КАРАОКЕ, БАР И ОТДЫХ'}
+                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-display font-black text-white uppercase leading-tight tracking-tight min-h-[2.4em] flex items-center">
+                  {selectedDay.tagline || 'КАРАОКЕ, БАР И ОТДЫХ'}
                 </h3>
 
-                {selectedDay.hasPromo && selectedDay.details && selectedDay.details.length > 0 ? (
-                  <div className="mt-5 space-y-2.5">
+                {selectedDay.details && selectedDay.details.length > 0 ? (
+                  <div className="mt-4 space-y-2.5">
                     {selectedDay.details.map((detail, idx) => (
                       <div key={idx} className="flex items-start gap-3 text-sm sm:text-base text-text-secondary">
-                        <Sparkles className="w-4 h-4 text-neon-pink flex-shrink-0 mt-1" />
+                        <Sparkles
+                          className={`w-4 h-4 flex-shrink-0 mt-1 ${
+                            selectedDay.hasPromo ? 'text-neon-pink' : 'text-[#08CEFD]'
+                          }`}
+                        />
                         <span>{detail}</span>
                       </div>
                     ))}
