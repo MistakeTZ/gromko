@@ -62,6 +62,7 @@ export interface GalleryPhoto {
   title: string;
   category: string;
   url: string;
+  fullUrl?: string;
   alt: string;
   span?: 'col-span-2 row-span-2' | 'col-span-1 row-span-2' | 'col-span-1 row-span-1' | 'col-span-2 row-span-1';
 }

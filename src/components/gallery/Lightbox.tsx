@@ -80,8 +80,9 @@ export const Lightbox: React.FC<LightboxProps> = ({
       {/* Image Container */}
       <div className="max-w-5xl max-h-[85vh] flex flex-col items-center justify-center">
         <img
-          src={photo.url}
+          src={photo.fullUrl || photo.url}
           alt={photo.alt}
+          decoding="async"
           className="max-w-full max-h-[75vh] object-contain rounded-2xl shadow-[0_0_50px_rgba(0,0,0,0.9),0_0_30px_rgba(255,0,172,0.2)]"
         />
 
