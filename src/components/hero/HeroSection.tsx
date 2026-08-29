@@ -1,27 +1,36 @@
-import React from 'react';
-import { ArrowRight, ChevronDown } from 'lucide-react';
-import { NeonButton } from '../common/NeonButton';
-import { VENUE_INFO } from '../../data/mockData';
+import React from "react";
+import { ArrowRight, ChevronDown } from "lucide-react";
+import { NeonButton } from "../common/NeonButton";
+import { VENUE_INFO } from "../../data/mockData";
 
 interface HeroSectionProps {
   onOpenBooking: () => void;
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
-  const daysOfWeek = ['ВОСКРЕСЕНЬЕ', 'ПОНЕДЕЛЬНИК', 'ВТОРНИК', 'СРЕДА', 'ЧЕТВЕРГ', 'ПЯТНИЦА', 'СУББОТА'];
+  const daysOfWeek = [
+    "ВОСКРЕСЕНЬЕ",
+    "ПОНЕДЕЛЬНИК",
+    "ВТОРНИК",
+    "СРЕДА",
+    "ЧЕТВЕРГ",
+    "ПЯТНИЦА",
+    "СУББОТА",
+  ];
   const todayDayIndex = new Date().getDay();
   const todayName = daysOfWeek[todayDayIndex];
   const isWeekend = todayDayIndex === 5 || todayDayIndex === 6;
-  const todayHours = isWeekend ? '19:00 — 06:00' : '19:00 — 04:00';
-  const closeHour = isWeekend ? '06:00' : '04:00';
+  const todayHours = isWeekend ? "19:00 — 06:00" : "19:00 — 04:00";
+  const closeHour = isWeekend ? "06:00" : "04:00";
 
   const handleScrollToGallery = () => {
-    const el = document.getElementById('gallery');
+    const el = document.getElementById("gallery");
     if (el) {
       const headerOffset = 80;
       const elementPosition = el.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+      const offsetPosition =
+        elementPosition + window.pageYOffset - headerOffset;
+      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
     }
   };
 
@@ -49,19 +58,23 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
       <div className="relative z-10 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 flex-1 flex flex-col justify-center">
         <div className="max-w-4xl">
           {/* Subtle Live Badge */}
-          <div className="inline-flex flex-wrap items-center gap-2 mb-6">
-            <span className="w-2 h-2 rounded-full bg-[#08CEFD] animate-neon-pulse flex-shrink-0" />
+          <div className="inline-flex items-start sm:items-center gap-2 mb-6">
+            <span className="w-2 h-2 rounded-full bg-[#08CEFD] animate-neon-pulse flex-shrink-0 mt-1 sm:mt-0" />
             <span className="text-xs sm:text-sm font-semibold tracking-wider text-text-secondary uppercase">
-              {VENUE_INFO.city} · {VENUE_INFO.address} · СЕГОДНЯ ДО {closeHour}
+              <span className="whitespace-nowrap">{VENUE_INFO.city} ·</span>{" "}
+              <span className="whitespace-nowrap">{VENUE_INFO.address} ·</span>{" "}
+              <span className="whitespace-nowrap">СЕГОДНЯ ДО {closeHour}</span>
             </span>
           </div>
 
           {/* Monumental Hero Headline */}
           <h1
             className="font-display font-black text-white tracking-[-0.04em] leading-[0.9] select-none break-words"
-            style={{ fontSize: 'clamp(36px, 11vw, 140px)' }}
+            style={{ fontSize: "clamp(36px, 11vw, 140px)" }}
           >
-            <span className="text-neon-pink drop-shadow-[0_0_35px_rgba(255,0,172,0.6)]">#</span>
+            <span className="text-neon-pink drop-shadow-[0_0_35px_rgba(255,0,172,0.6)]">
+              #
+            </span>
             ГРОМКО
           </h1>
 

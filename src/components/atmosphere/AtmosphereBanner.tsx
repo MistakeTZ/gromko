@@ -18,7 +18,7 @@ export const AtmosphereBanner: React.FC = () => {
         {/* Monumental Emotional Statement */}
         <h2
           className="font-display font-black text-white tracking-tight uppercase leading-[0.92] select-none"
-          style={{ fontSize: 'clamp(30px, 7.5vw, 100px)' }}
+          style={{ fontSize: 'clamp(40px, 7.5vw, 100px)' }}
         >
           НЕ ПРОСТО <br />
           КАРАОКЕ. <br />

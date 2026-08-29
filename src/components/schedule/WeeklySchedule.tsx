@@ -81,13 +81,6 @@ export const WeeklySchedule: React.FC<WeeklyScheduleProps> = ({ onOpenBooking })
                     <span className="w-1.5 h-1.5 rounded-full bg-transparent opacity-0" />
                   )}
                 </div>
-
-                {isToday && (
-                  <span
-                    className="absolute top-1.5 right-1.5 sm:top-2 sm:right-2 w-1.5 h-1.5 rounded-full bg-[#08CEFD] animate-pulse"
-                    title="Сегодня"
-                  />
-                )}
               </button>
             );
           })}
@@ -137,7 +130,7 @@ export const WeeklySchedule: React.FC<WeeklyScheduleProps> = ({ onOpenBooking })
                   )}
                 </div>
 
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-display font-black text-white uppercase leading-tight tracking-tight min-h-[2.4em] flex items-center">
+                <h3 className="text-3xl sm:text-3xl lg:text-4xl font-display font-black text-white uppercase leading-tight tracking-tight min-h-[2.4em] flex items-center">
                   {selectedDay.tagline || 'КАРАОКЕ, БАР И ОТДЫХ'}
                 </h3>
 
