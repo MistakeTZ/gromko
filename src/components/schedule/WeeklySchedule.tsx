@@ -38,7 +38,7 @@ export const WeeklySchedule: React.FC<WeeklyScheduleProps> = ({ onOpenBooking })
 
           <div className="text-sm text-text-secondary font-mono">
             <div>ПН–ЧТ, ВС: <span className="text-white font-bold">19:00 — 04:00</span></div>
-            <div className="mt-1">ПТ–СБ: <span className="text-neon-pink font-bold">19:00 — 06:00</span></div>
+            <div className="mt-1">ПТ–СБ: <span className="text-white font-bold">19:00 — 06:00</span></div>
           </div>
         </div>
 
@@ -46,7 +46,7 @@ export const WeeklySchedule: React.FC<WeeklyScheduleProps> = ({ onOpenBooking })
         <div className="mt-10 grid grid-cols-7 gap-2 sm:gap-3">
           {WEEK_SCHEDULE.map((day, idx) => {
             const isSelected = selectedDayIndex === idx;
-            const isToday = currentDayIndex === idx;
+            const isToday = false && currentDayIndex === idx;
 
             return (
               <button

@@ -55,6 +55,36 @@ export const ContactsSection: React.FC = () => {
                     {VENUE_INFO.phone}
                   </a>
                 </div>
+
+                <div>
+                  <div className="text-xs font-mono text-text-muted uppercase tracking-wider">Соцсети:</div>
+                  <div className="flex flex-wrap gap-2.5 mt-2">
+                    <a
+                      href={VENUE_INFO.vkUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="px-3.5 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-xs font-semibold text-[#08CEFD] border border-[#08CEFD]/30 hover:border-[#08CEFD] transition-all uppercase tracking-wider"
+                    >
+                      VKontakte
+                    </a>
+                    <a
+                      href={VENUE_INFO.tgUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="px-3.5 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-xs font-semibold text-neon-pink border border-neon-pink/30 hover:border-neon-pink transition-all uppercase tracking-wider"
+                    >
+                      Telegram
+                    </a>
+                    <a
+                      href={VENUE_INFO.instagramUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="px-3.5 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-xs font-semibold text-white/80 hover:text-white border border-white/15 hover:border-white/40 transition-all uppercase tracking-wider"
+                    >
+                      Instagram
+                    </a>
+                  </div>
+                </div>
               </div>
 
               {/* Two Clean Action Buttons */}

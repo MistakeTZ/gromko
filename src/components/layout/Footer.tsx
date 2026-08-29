@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { VENUE_INFO } from '../../data/mockData';
-import { Modal } from '../common/Modal';
+import { useRouter } from '../../context/RouterContext';
 
 export const Footer: React.FC = () => {
-  const [privacyModalOpen, setPrivacyModalOpen] = useState(false);
+  const { navigate } = useRouter();
 
   return (
     <footer className="relative bg-[#050507] border-t border-white/5 pt-16 pb-24 md:pb-16 overflow-hidden">
@@ -13,10 +13,14 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center text-center">
           {/* Big Brand Title */}
-          <div className="font-display font-black text-6xl sm:text-8xl md:text-9xl tracking-tighter text-white select-none">
+          <button
+            onClick={() => navigate('/')}
+            className="font-display font-black text-6xl sm:text-8xl md:text-9xl tracking-tighter text-white select-none cursor-pointer focus:outline-none hover:opacity-90 transition-opacity"
+            aria-label="ГРОМКО Главная"
+          >
             <span className="text-neon-pink drop-shadow-[0_0_20px_rgba(255,0,172,0.4)]">#</span>
             ГРОМКО
-          </div>
+          </button>
 
           {/* Subtitle & Address */}
           <div className="mt-4 text-sm sm:text-base font-semibold tracking-widest text-text-secondary uppercase">
@@ -58,40 +62,14 @@ export const Footer: React.FC = () => {
           <div className="mt-12 pt-8 w-full border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-text-muted">
             <div>© {new Date().getFullYear()} #ГРОМКО Караоке-бар. Все права защищены.</div>
             <button
-              onClick={() => setPrivacyModalOpen(true)}
-              className="hover:text-text-secondary transition-colors underline underline-offset-4"
+              onClick={() => navigate('/privacy')}
+              className="hover:text-text-secondary transition-colors underline underline-offset-4 cursor-pointer"
             >
               Политика конфиденциальности
             </button>
           </div>
         </div>
       </div>
-
-      {/* Privacy Policy Modal */}
-      <Modal
-        isOpen={privacyModalOpen}
-        onClose={() => setPrivacyModalOpen(false)}
-        title="Политика конфиденциальности"
-        subtitle="Обработка персональных данных в караоке-баре #ГРОМКО"
-      >
-        <div className="space-y-4 text-xs sm:text-sm text-text-secondary leading-relaxed">
-          <p>
-            Настоящая Политика конфиденциальности описывает, как караоке-бар <strong>#ГРОМКО</strong> (г. Иваново, ул. 10 Августа, 43) обрабатывает и защищает персональные данные посетителей веб-сайта.
-          </p>
-          <h4 className="text-white font-semibold text-sm">1. Сбор информации</h4>
-          <p>
-            При оформлении онлайн-бронирования столов мы запрашиваем ваше имя, контактный номер телефона, дату, время и количество гостей. Данная информация используется исключительно для подтверждения и бронирования посадочных мест.
-          </p>
-          <h4 className="text-white font-semibold text-sm">2. Защита данных</h4>
-          <p>
-            Мы не передаем вашу персональную контактную информацию третьим лицам. Доступ к контактным данным имеют только уполномоченные администраторы заведения для связи с гостем.
-          </p>
-          <h4 className="text-white font-semibold text-sm">3. Возрастные ограничения и правила клуба</h4>
-          <p>
-            В заведении действует режим работы 19:00 — 06:00, а также правила дресс-кода и фейс-контроля (18+).
-          </p>
-        </div>
-      </Modal>
     </footer>
   );
 };

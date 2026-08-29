@@ -33,7 +33,7 @@ export const DesktopBookingForm: React.FC<DesktopBookingFormProps> = ({
 
   const [date, setDate] = useState<string>(formatDateVal(today));
   const [time, setTime] = useState<string>('21:00');
-  const [guests, setGuests] = useState<number>(4);
+  const [guests, setGuests] = useState<number>(2);
   const [name, setName] = useState<string>('');
   const [phone, setPhone] = useState<string>('');
   const [comment, setComment] = useState<string>('');
@@ -151,7 +151,7 @@ export const DesktopBookingForm: React.FC<DesktopBookingFormProps> = ({
           <div>
             <label className="block text-xs font-display font-bold uppercase tracking-wider text-text-secondary mb-2 flex items-center gap-1.5">
               <Users className="w-3.5 h-3.5 text-[#08CEFD]" />
-              <span>Гостей: <strong className="text-white">{guests} чел.</strong></span>
+              <span>Гостей:</span>
             </label>
             <div className="flex items-center gap-2">
               <button
