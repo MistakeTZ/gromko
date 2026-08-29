@@ -29,7 +29,7 @@ export const GallerySection: React.FC = () => {
             </div>
             <h2
               className="font-display font-black text-white tracking-tight uppercase leading-[0.9]"
-              style={{ fontSize: 'clamp(40px, 7vw, 84px)' }}
+              style={{ fontSize: 'clamp(32px, 7vw, 84px)' }}
             >
               АТМОСФЕРА <br />
               <span className="text-neon-gradient">В КАДРЕ</span>
@@ -135,7 +135,7 @@ export const GallerySection: React.FC = () => {
               </div>
 
               <div>
-                <span className="font-display font-black text-3xl sm:text-6xl lg:text-7xl text-white tracking-tighter uppercase leading-none drop-shadow-[0_4px_30px_rgba(0,0,0,0.9)]">
+                <span className="font-display font-black text-2xl sm:text-5xl lg:text-7xl text-white tracking-tighter uppercase leading-none drop-shadow-[0_4px_30px_rgba(0,0,0,0.9)]">
                   DRINK. REPEAT.
                 </span>
                 <div className="mt-2 text-xs sm:text-sm text-white/80 font-mono">

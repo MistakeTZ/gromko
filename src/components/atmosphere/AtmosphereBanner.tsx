@@ -18,7 +18,7 @@ export const AtmosphereBanner: React.FC = () => {
         {/* Monumental Emotional Statement */}
         <h2
           className="font-display font-black text-white tracking-tight uppercase leading-[0.92] select-none"
-          style={{ fontSize: 'clamp(44px, 8vw, 110px)' }}
+          style={{ fontSize: 'clamp(30px, 7.5vw, 100px)' }}
         >
           НЕ ПРОСТО <br />
           КАРАОКЕ. <br />
@@ -27,7 +27,7 @@ export const AtmosphereBanner: React.FC = () => {
         </h2>
 
         {/* Narrative Essence Line */}
-        <div className="mt-12 text-xs sm:text-sm md:text-base font-mono font-bold tracking-[0.25em] text-text-secondary uppercase">
+        <div className="mt-8 sm:mt-12 text-xs sm:text-sm md:text-base font-mono font-bold tracking-[0.12em] sm:tracking-[0.25em] text-text-secondary uppercase">
           МУЗЫКА · СВЕТ · ЛЮДИ · АЛКОГОЛЬ · ЕДА · ПЕНИЕ
         </div>
       </div>

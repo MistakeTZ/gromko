@@ -112,7 +112,7 @@ export const MenuPage: React.FC<MenuPageProps> = ({ onOpenBooking }) => {
                   : 'bg-white/5 text-text-secondary hover:text-white hover:bg-white/10'
               }`}
             >
-              <Wine className="w-4 h-4" />
+              <Wine className="hidden md:inline w-4 h-4" />
               <span>Барная Карта ({BAR_ITEMS.length})</span>
             </button>
 
@@ -127,7 +127,7 @@ export const MenuPage: React.FC<MenuPageProps> = ({ onOpenBooking }) => {
                   : 'bg-white/5 text-text-secondary hover:text-white hover:bg-white/10'
               }`}
             >
-              <Utensils className="w-4 h-4" />
+              <Utensils className="hidden md:inline w-4 h-4" />
               <span>Основное Меню ({MENU_ITEMS.length})</span>
             </button>
           </div>

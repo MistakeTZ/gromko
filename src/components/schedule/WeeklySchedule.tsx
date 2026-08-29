@@ -36,45 +36,57 @@ export const WeeklySchedule: React.FC<WeeklyScheduleProps> = ({ onOpenBooking })
             </h2>
           </div>
 
-          <div className="text-sm text-text-secondary font-mono">
-            <div>ПН–ЧТ, ВС: <span className="text-white font-bold">19:00 — 04:00</span></div>
-            <div className="mt-1">ПТ–СБ: <span className="text-white font-bold">19:00 — 06:00</span></div>
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-xs sm:text-sm text-text-secondary font-mono">
+            <div className="px-3 py-1.5 rounded-xl bg-white/[0.04] border border-white/10 flex items-center gap-2">
+              <span className="text-text-muted">ПН–ЧТ, ВС:</span>
+              <span className="text-white font-bold">19:00 — 04:00</span>
+            </div>
+            <div className="px-3 py-1.5 rounded-xl bg-white/[0.04] border border-white/10 flex items-center gap-2">
+              <span className="text-text-muted">ПТ–СБ:</span>
+              <span className="text-neon-cyan font-bold">19:00 — 06:00</span>
+            </div>
           </div>
         </div>
 
         {/* Minimalist Day Strip (ПН — ВС) */}
-        <div className="mt-10 grid grid-cols-7 gap-2 sm:gap-3">
+        <div className="mt-10 grid grid-cols-7 gap-1.5 sm:gap-3">
           {WEEK_SCHEDULE.map((day, idx) => {
             const isSelected = selectedDayIndex === idx;
-            const isToday = false && currentDayIndex === idx;
+            const isToday = currentDayIndex === idx;
 
             return (
               <button
                 key={day.id}
+                type="button"
                 onClick={() => setSelectedDayIndex(idx)}
-                className={`py-4 px-2 sm:px-4 rounded-xl text-center transition-all duration-300 relative cursor-pointer border ${
+                className={`py-3 sm:py-4 px-1 sm:px-3 rounded-2xl flex flex-col items-center justify-between text-center transition-all duration-300 relative cursor-pointer border min-h-[84px] sm:min-h-[96px] ${
                   isSelected
-                    ? 'bg-white/10 border-[#FF00AC] text-white shadow-[0_0_20px_rgba(255,0,172,0.25)]'
-                    : 'bg-transparent border-white/5 hover:border-white/20 text-text-secondary hover:text-white'
+                    ? 'bg-white/10 border-[#FF00AC] text-white shadow-[0_0_20px_rgba(255,0,172,0.3)] ring-1 ring-[#FF00AC]/50'
+                    : 'bg-white/[0.02] border-white/5 hover:border-white/20 text-text-secondary hover:text-white'
                 }`}
               >
-                <div className="font-display font-black text-lg sm:text-2xl tracking-tight">
+                <div className="font-display font-black text-base sm:text-2xl tracking-tight leading-none">
                   {day.shortName}
                 </div>
 
-                <div className="text-[10px] sm:text-xs font-mono text-text-muted mt-1">
+                <div className="text-[10px] sm:text-xs font-mono text-text-muted mt-1.5 leading-none">
                   {day.workingHours.split(' — ')[1]}
                 </div>
 
-                {/* Promo Dot Indicator */}
-                {day.hasPromo && (
-                  <div className="mt-2 flex justify-center">
-                    <span className="w-1.5 h-1.5 rounded-full bg-neon-pink" />
-                  </div>
-                )}
+                {/* Promo Dot Indicator - Fixed height container so all 7 cards remain perfectly aligned */}
+                <div className="h-2 flex items-center justify-center mt-1.5">
+                  {day.hasPromo ? (
+                    <span className="w-1.5 h-1.5 rounded-full bg-neon-pink shadow-[0_0_8px_rgba(255,0,172,0.8)]" />
+                  ) : (
+                    <span className="w-1.5 h-1.5 rounded-full bg-transparent opacity-0" />
+                  )}
+                </div>
 
                 {isToday && (
-                  <span className="absolute top-2 right-2 w-1.5 h-1.5 rounded-full bg-[#08CEFD] animate-pulse" />
+                  <span
+                    className="absolute top-1.5 right-1.5 sm:top-2 sm:right-2 w-1.5 h-1.5 rounded-full bg-[#08CEFD] animate-pulse"
+                    title="Сегодня"
+                  />
                 )}
               </button>
             );

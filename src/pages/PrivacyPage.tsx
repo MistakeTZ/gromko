@@ -122,8 +122,10 @@ export const PrivacyPage: React.FC = () => {
                   {VENUE_INFO.phone}
                 </a>
               </div>
-              <div className="text-text-muted text-xs pt-2">
-                Режим работы: {VENUE_INFO.workingHours}
+              <div className="text-text-muted text-xs pt-2 space-y-0.5">
+                <div>Режим работы:</div>
+                <div className="text-text-secondary">ПН–ЧТ, ВС: 19:00 — 04:00</div>
+                <div className="text-neon-cyan">ПТ–СБ: 19:00 — 06:00</div>
               </div>
             </div>
           </section>

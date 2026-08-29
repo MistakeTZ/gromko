@@ -40,11 +40,18 @@
 }
 
 /* Base Body Styles */
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 body {
   background-color: var(--black);
   color: var(--white);
   font-family: 'Manrope', sans-serif;
   overflow-x: hidden;
+  width: 100%;
+  position: relative;
 }
 
 /* Display Font Utility */

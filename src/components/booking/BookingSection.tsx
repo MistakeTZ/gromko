@@ -64,7 +64,7 @@ export const BookingSection: React.FC = () => {
 
               <h2
                 className="font-display font-black text-white tracking-tight uppercase leading-[0.9]"
-                style={{ fontSize: 'clamp(44px, 7vw, 90px)' }}
+                style={{ fontSize: 'clamp(36px, 7vw, 90px)' }}
               >
                 ГОТОВЫ <br />
                 <span className="text-neon-gradient">ПЕТЬ?</span>
@@ -76,9 +76,11 @@ export const BookingSection: React.FC = () => {
 
               {/* Minimal bullet items */}
               <div className="mt-8 space-y-4 text-sm text-text-secondary font-mono">
-                <div className="flex items-center gap-3">
-                  <Clock className="w-4 h-4 text-[#08CEFD]" />
-                  <span>График: {VENUE_INFO.workingHours}</span>
+                <div className="flex items-start gap-3">
+                  <Clock className="w-4 h-4 text-[#08CEFD] flex-shrink-0 mt-0.5" />
+                  <div className="text-xs sm:text-sm text-text-secondary leading-snug">
+                    <span className="text-white font-medium">Режим:</span> ПН–ЧТ, ВС 19:00—04:00 · ПТ–СБ 19:00—06:00
+                  </div>
                 </div>
                 <div className="flex items-center gap-3">
                   <CalendarCheck className="w-4 h-4 text-neon-pink" />

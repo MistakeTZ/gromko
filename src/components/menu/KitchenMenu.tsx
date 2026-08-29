@@ -46,7 +46,7 @@ export const KitchenMenu: React.FC<KitchenMenuProps> = ({ onOpenFullMenu }) => {
 
               <h2
                 className="font-display font-black text-white tracking-tight uppercase leading-[0.92]"
-                style={{ fontSize: 'clamp(36px, 5vw, 64px)' }}
+                style={{ fontSize: 'clamp(30px, 5vw, 64px)' }}
               >
                 ХИТЫ КУХНИ
               </h2>

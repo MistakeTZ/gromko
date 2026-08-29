@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu as MenuIcon, X, Phone, Calendar } from 'lucide-react';
+import { Menu as MenuIcon, X, Phone, Calendar, MapPin, Clock } from 'lucide-react';
 import { NeonButton } from '../common/NeonButton';
 import { VENUE_INFO } from '../../data/mockData';
 import { useRouter } from '../../context/RouterContext';
@@ -177,7 +177,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking, onMobileMenuToggl
 
       {/* Mobile Fullscreen Menu Drawer */}
       <div
-        className={`fixed inset-0 z-50 bg-[#050507]/98 backdrop-blur-3xl transition-all duration-300 md:hidden flex flex-col justify-between p-6 overflow-y-auto overscroll-contain ${
+        className={`fixed inset-0 z-50 bg-[#050507]/98 backdrop-blur-3xl transition-all duration-300 md:hidden flex flex-col justify-between p-6 pb-8 overflow-y-auto overscroll-contain ${
           mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
         style={{ touchAction: 'pan-y' }}
@@ -186,10 +186,17 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking, onMobileMenuToggl
         <div className="flex items-center justify-between pb-5 border-b border-white/10">
           <button
             onClick={() => handleNav('home')}
-            className="flex items-center gap-2 focus:outline-none"
+            className="flex items-center focus:outline-none cursor-pointer"
+            aria-label="ГРОМКО Главная"
           >
-            <span className="text-neon-pink font-display font-black text-2xl drop-shadow-[0_0_15px_rgba(255,0,172,0.6)]">#</span>
-            <span className="text-white font-display font-black text-xl tracking-wider">ГРОМКО</span>
+            <img
+              src={VENUE_INFO.logoUrl}
+              alt="Лого #ГРОМКО"
+              className="h-8 w-auto object-contain"
+              onError={(e) => {
+                (e.target as HTMLElement).style.display = 'none';
+              }}
+            />
           </button>
 
           <button
@@ -248,20 +255,31 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking, onMobileMenuToggl
         </div>
 
         {/* Mobile Drawer Bottom Info */}
-        <div className="flex flex-col gap-4 pt-5 border-t border-white/10">
-          <div>
-            <div className="text-white font-medium text-sm">{VENUE_INFO.fullAddress}</div>
-            <div className="text-xs font-mono font-bold text-[#08CEFD] mt-1 tracking-wide">
-              {VENUE_INFO.workingHours}
+        <div className="flex flex-col gap-4 pt-5 border-t border-white/10 mt-auto">
+          {/* Address & Hours Card */}
+          <div className="p-3.5 rounded-2xl bg-white/[0.04] border border-white/10 space-y-2.5">
+            <div className="flex items-start gap-2.5">
+              <MapPin className="w-4 h-4 text-neon-pink flex-shrink-0 mt-0.5" />
+              <span className="text-white text-xs sm:text-sm font-medium leading-snug">
+                {VENUE_INFO.fullAddress}
+              </span>
+            </div>
+
+            <div className="flex items-start gap-2.5 pt-2 border-t border-white/5">
+              <Clock className="w-4 h-4 text-[#08CEFD] flex-shrink-0 mt-0.5" />
+              <div className="text-xs text-text-secondary leading-snug space-y-0.5 font-mono">
+                <div>ПН–ЧТ, ВС: <strong className="text-white font-semibold">19:00 — 04:00</strong></div>
+                <div>ПТ–СБ: <strong className="text-neon-cyan font-semibold">19:00 — 06:00</strong></div>
+              </div>
             </div>
           </div>
 
           <a
             href={`tel:${VENUE_INFO.phoneRaw}`}
-            className="flex items-center gap-2 text-base text-white hover:text-neon-pink font-bold font-display"
+            className="flex items-center justify-center gap-2.5 py-3 px-4 rounded-xl bg-white/[0.06] hover:bg-white/10 border border-white/10 text-white hover:text-neon-pink font-bold font-display text-sm sm:text-base transition-colors"
           >
             <Phone className="w-4 h-4 text-neon-pink" />
-            {VENUE_INFO.phone}
+            <span>{VENUE_INFO.phone}</span>
           </a>
 
           <NeonButton
@@ -272,6 +290,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking, onMobileMenuToggl
               setMobileMenuOpen(false);
               onOpenBooking();
             }}
+            className="py-3.5 text-sm sm:text-base font-black shadow-neon-gradient"
           >
             Забронировать стол
           </NeonButton>

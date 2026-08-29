@@ -23,7 +23,7 @@ export const BarCard: React.FC<BarCardProps> = ({ onOpenFullMenu }) => {
 
               <h2
                 className="font-display font-black text-white tracking-tight uppercase leading-[0.92]"
-                style={{ fontSize: 'clamp(36px, 5.5vw, 70px)' }}
+                style={{ fontSize: 'clamp(30px, 5.5vw, 70px)' }}
               >
                 ПОСЛЕ ПЕРВОГО <br />
                 КОКТЕЙЛЯ <br />

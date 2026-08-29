@@ -49,47 +49,47 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
       <div className="relative z-10 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 flex-1 flex flex-col justify-center">
         <div className="max-w-4xl">
           {/* Subtle Live Badge */}
-          <div className="inline-flex items-center gap-2 mb-6">
-            <span className="w-2 h-2 rounded-full bg-[#08CEFD] animate-neon-pulse" />
-            <span className="text-xs sm:text-sm font-semibold tracking-widest text-text-secondary uppercase">
+          <div className="inline-flex flex-wrap items-center gap-2 mb-6">
+            <span className="w-2 h-2 rounded-full bg-[#08CEFD] animate-neon-pulse flex-shrink-0" />
+            <span className="text-xs sm:text-sm font-semibold tracking-wider text-text-secondary uppercase">
               {VENUE_INFO.city} · {VENUE_INFO.address} · СЕГОДНЯ ДО {closeHour}
             </span>
           </div>
 
           {/* Monumental Hero Headline */}
           <h1
-            className="font-display font-black text-white tracking-[-0.06em] leading-[0.88] select-none"
-            style={{ fontSize: 'clamp(64px, 12vw, 160px)' }}
+            className="font-display font-black text-white tracking-[-0.04em] leading-[0.9] select-none break-words"
+            style={{ fontSize: 'clamp(36px, 11vw, 140px)' }}
           >
             <span className="text-neon-pink drop-shadow-[0_0_35px_rgba(255,0,172,0.6)]">#</span>
             ГРОМКО
           </h1>
 
           {/* Subtitle & Concept */}
-          <div className="mt-4 sm:mt-6 text-base sm:text-2xl font-display font-bold tracking-widest text-neon-cyan uppercase">
+          <div className="mt-4 sm:mt-6 text-sm sm:text-2xl font-display font-bold tracking-widest text-neon-cyan uppercase">
             {VENUE_INFO.subtitle}
           </div>
 
           {/* Emotional Statement */}
-          <p className="mt-4 text-lg sm:text-2xl text-white/80 font-medium italic border-l-2 border-neon-pink pl-4">
+          <p className="mt-4 text-base sm:text-2xl text-white/80 font-medium italic border-l-2 border-neon-pink pl-4">
             «{VENUE_INFO.tagline}»
           </p>
 
           {/* Primary Action Button (The single dominant neon gradient button) */}
-          <div className="mt-10 sm:mt-12 flex flex-wrap items-center gap-6">
+          <div className="mt-8 sm:mt-12 flex flex-wrap items-center gap-4 sm:gap-6">
             <NeonButton
               variant="primary"
               size="lg"
               onClick={onOpenBooking}
               icon={<ArrowRight className="w-5 h-5 ml-1" />}
-              className="px-8 py-4 text-base font-display font-bold uppercase shadow-neon-gradient"
+              className="px-6 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base font-display font-bold uppercase shadow-neon-gradient"
             >
               Забронировать стол
             </NeonButton>
 
             <button
               onClick={handleScrollToGallery}
-              className="text-sm font-display font-semibold uppercase tracking-wider text-text-secondary hover:text-white transition-colors flex items-center gap-2 group py-2"
+              className="text-xs sm:text-sm font-display font-semibold uppercase tracking-wider text-text-secondary hover:text-white transition-colors flex items-center gap-2 group py-2"
             >
               <span>Смотреть атмосферу</span>
               <ChevronDown className="w-4 h-4 text-neon-cyan group-hover:translate-y-0.5 transition-transform" />
@@ -99,8 +99,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
       </div>
 
       {/* Bottom Minimalist Bar */}
-      <div className="relative z-10 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pb-8 pt-4 border-t border-white/5 flex items-center justify-between text-xs text-text-muted">
-        <div className="flex items-center gap-4 sm:gap-6 font-mono tracking-wider">
+      <div className="relative z-10 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pb-8 pt-4 border-t border-white/5 flex flex-wrap items-center justify-between gap-3 text-xs text-text-muted">
+        <div className="flex flex-wrap items-center gap-3 sm:gap-6 font-mono tracking-wider">
           <span className="text-white font-semibold">● {todayName}</span>
           <span className="text-white/20">/</span>
           <span>{todayHours}</span>

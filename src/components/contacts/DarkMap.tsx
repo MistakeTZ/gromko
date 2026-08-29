@@ -64,29 +64,26 @@ export const DarkMap: React.FC<DarkMapProps> = ({
         </div>
       </div>
 
-      {/* Top Left: Map Mode Toggle */}
-      <div className="absolute top-4 left-4 z-20 flex items-center gap-2">
+      {/* Top Controls Bar */}
+      <div className="absolute top-4 left-4 right-4 z-20 flex items-center justify-between gap-2 pointer-events-none">
         <button
           type="button"
           onClick={() => setMapMode(mapMode === 'stylized' ? 'interactive' : 'stylized')}
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface/90 border border-white/15 text-xs font-bold text-white hover:bg-white/10 transition-all shadow-lg backdrop-blur-md"
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface/90 border border-white/15 text-xs font-bold text-white hover:bg-white/10 transition-all shadow-lg backdrop-blur-md pointer-events-auto"
           title="Переключить тему карты"
         >
           <Layers className="w-3.5 h-3.5 text-[#08CEFD]" />
           <span>{mapMode === 'stylized' ? 'Dark Neon' : 'Стандарт'}</span>
         </button>
-      </div>
 
-      {/* Top Right: Open in Yandex Maps */}
-      <div className="absolute top-4 right-4 z-20 flex items-center gap-2">
         <a
           href={yandexDirectUrl}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-neon-pink to-[#08CEFD] text-white text-xs font-bold hover:shadow-[0_0_20px_rgba(255,0,172,0.5)] transition-all shadow-lg"
+          className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl bg-gradient-to-r from-neon-pink to-[#08CEFD] text-white text-xs font-bold hover:shadow-[0_0_20px_rgba(255,0,172,0.5)] transition-all shadow-lg pointer-events-auto"
         >
           <Navigation className="w-3.5 h-3.5" />
-          <span>Построить маршрут</span>
+          <span>Маршрут</span>
           <ExternalLink className="w-3 h-3 opacity-80" />
         </a>
       </div>
@@ -112,15 +109,15 @@ export const DarkMap: React.FC<DarkMapProps> = ({
       </div>
 
       {/* Bottom Overlay Bar */}
-      <div className="absolute bottom-4 left-4 right-4 z-20 flex items-center justify-between pointer-events-none">
-        <div className="px-3.5 py-1.5 rounded-xl bg-black/85 border border-white/10 backdrop-blur-md text-[11px] text-text-secondary pointer-events-auto">
-          <span className="text-white font-bold">{VENUE_INFO.fullAddress}</span>
+      <div className="absolute bottom-4 left-4 right-4 z-20 flex flex-wrap items-center justify-between gap-2 pointer-events-none">
+        <div className="px-3.5 py-1.5 rounded-xl bg-black/85 border border-white/10 backdrop-blur-md text-[11px] text-text-secondary pointer-events-auto max-w-[70%] truncate">
+          <span className="text-white font-bold truncate">{VENUE_INFO.fullAddress}</span>
         </div>
         <a
           href={yandexSearchUrl}
           target="_blank"
           rel="noreferrer"
-          className="px-3 py-1.5 rounded-xl bg-black/85 border border-white/10 backdrop-blur-md text-[11px] text-neon-cyan hover:text-white pointer-events-auto transition-colors"
+          className="px-3 py-1.5 rounded-xl bg-black/85 border border-white/10 backdrop-blur-md text-[11px] text-neon-cyan hover:text-white pointer-events-auto transition-colors flex-shrink-0"
         >
           Яндекс.Карты ↗
         </a>

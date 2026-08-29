@@ -22,7 +22,7 @@ export const ContactsSection: React.FC = () => {
 
               <h2
                 className="font-display font-black text-white tracking-tight uppercase leading-[0.9]"
-                style={{ fontSize: 'clamp(44px, 7vw, 90px)' }}
+                style={{ fontSize: 'clamp(36px, 7vw, 90px)' }}
               >
                 НАЙДИ <br />
                 <span className="text-neon-gradient">НАС</span>
@@ -41,8 +41,15 @@ export const ContactsSection: React.FC = () => {
 
                 <div>
                   <div className="text-xs font-mono text-text-muted uppercase tracking-wider">График работы:</div>
-                  <div className="text-base sm:text-lg font-mono font-bold text-[#08CEFD] mt-1">
-                    {VENUE_INFO.workingHours}
+                  <div className="mt-2 space-y-1.5 font-mono text-sm sm:text-base">
+                    <div className="flex items-center gap-3">
+                      <span className="text-text-muted text-xs sm:text-sm w-24">ПН–ЧТ, ВС:</span>
+                      <span className="text-white font-bold">19:00 — 04:00</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <span className="text-text-muted text-xs sm:text-sm w-24">ПТ–СБ:</span>
+                      <span className="text-neon-cyan font-bold">19:00 — 06:00</span>
+                    </div>
                   </div>
                 </div>
 

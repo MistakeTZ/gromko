@@ -15,7 +15,8 @@ export const Footer: React.FC = () => {
           {/* Big Brand Title */}
           <button
             onClick={() => navigate('/')}
-            className="font-display font-black text-6xl sm:text-8xl md:text-9xl tracking-tighter text-white select-none cursor-pointer focus:outline-none hover:opacity-90 transition-opacity"
+            className="font-display font-black tracking-tighter text-white select-none cursor-pointer focus:outline-none hover:opacity-90 transition-opacity"
+            style={{ fontSize: 'clamp(40px, 12vw, 120px)' }}
             aria-label="ГРОМКО Главная"
           >
             <span className="text-neon-pink drop-shadow-[0_0_20px_rgba(255,0,172,0.4)]">#</span>
@@ -23,11 +24,16 @@ export const Footer: React.FC = () => {
           </button>
 
           {/* Subtitle & Address */}
-          <div className="mt-4 text-sm sm:text-base font-semibold tracking-widest text-text-secondary uppercase">
+          <div className="mt-4 text-xs sm:text-base font-semibold tracking-widest text-text-secondary uppercase">
             {VENUE_INFO.subtitle} · КУХНЯ
           </div>
-          <div className="mt-1 text-xs sm:text-sm text-text-muted">
-            {VENUE_INFO.fullAddress} · {VENUE_INFO.workingHours}
+          <div className="mt-2 text-xs sm:text-sm text-text-secondary">
+            {VENUE_INFO.fullAddress}
+          </div>
+          <div className="mt-1.5 text-xs sm:text-sm text-text-muted font-mono flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+            <span>ПН–ЧТ, ВС: <strong className="text-white font-semibold">19:00 — 04:00</strong></span>
+            <span className="text-white/20 hidden sm:inline">|</span>
+            <span>ПТ–СБ: <strong className="text-neon-cyan font-semibold">19:00 — 06:00</strong></span>
           </div>
 
           {/* Social Links */}
