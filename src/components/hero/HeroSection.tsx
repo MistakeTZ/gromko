@@ -39,8 +39,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
       {/* Background Cinematic Nightlife Photo */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://static.tildacdn.com/tild6165-3962-4633-a330-336437383163/2zNCTvhoMrA.jpg"
+          src="/images/hero-bg.webp"
           alt="Караоке и ночная жизнь в ГРОМКО"
+          width="1400"
+          height="933"
+          loading="eager"
+          // @ts-expect-error fetchPriority attribute
+          fetchpriority="high"
+          decoding="async"
           className="w-full h-full object-cover object-center opacity-45 scale-105"
         />
 

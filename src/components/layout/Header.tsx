@@ -84,6 +84,9 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking, onMobileMenuToggl
             <img
               src={VENUE_INFO.logoUrl}
               alt="Лого #ГРОМКО"
+              width="160"
+              height="40"
+              decoding="async"
               className="h-8 sm:h-10 w-auto object-contain transition-transform group-hover:scale-105"
               onError={(e) => {
                 (e.target as HTMLElement).style.display = 'none';
@@ -192,6 +195,9 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking, onMobileMenuToggl
             <img
               src={VENUE_INFO.logoUrl}
               alt="Лого #ГРОМКО"
+              width="140"
+              height="35"
+              decoding="async"
               className="h-8 w-auto object-contain"
               onError={(e) => {
                 (e.target as HTMLElement).style.display = 'none';

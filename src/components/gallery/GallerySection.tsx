@@ -53,6 +53,10 @@ export const GallerySection: React.FC = () => {
               <img
                 src={heroPhoto.url}
                 alt={heroPhoto.alt}
+                width="900"
+                height="560"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
@@ -83,6 +87,10 @@ export const GallerySection: React.FC = () => {
                 <img
                   src={sidePhoto1.url}
                   alt={sidePhoto1.alt}
+                  width="600"
+                  height="350"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
@@ -100,6 +108,10 @@ export const GallerySection: React.FC = () => {
                 <img
                   src={sidePhoto2.url}
                   alt={sidePhoto2.alt}
+                  width="600"
+                  height="350"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
@@ -120,6 +132,10 @@ export const GallerySection: React.FC = () => {
             <img
               src={widePhoto.url}
               alt={widePhoto.alt}
+              width="1200"
+              height="460"
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/30 to-black/80" />
@@ -156,6 +172,10 @@ export const GallerySection: React.FC = () => {
                 <img
                   src={photo.url}
                   alt={photo.alt}
+                  width="600"
+                  height="350"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-70 group-hover:opacity-40 transition-opacity" />
@@ -163,9 +183,9 @@ export const GallerySection: React.FC = () => {
                   <div className="text-xs font-mono text-neon-pink font-bold uppercase">
                     {photo.category}
                   </div>
-                  <h4 className="font-display font-bold text-base text-white mt-0.5">
+                  <h3 className="font-display font-bold text-base text-white mt-0.5">
                     {photo.title}
-                  </h4>
+                  </h3>
                 </div>
               </div>
             ))}

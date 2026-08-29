@@ -68,8 +68,12 @@ export const BarCard: React.FC<BarCardProps> = ({ onOpenFullMenu }) => {
               className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl group cursor-pointer"
             >
               <img
-                src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1200&q=80"
+                src="/images/bar-hero.webp"
                 alt="Бар и коктейли #ГРОМКО"
+                width="900"
+                height="600"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-[460px] sm:h-[580px] object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />

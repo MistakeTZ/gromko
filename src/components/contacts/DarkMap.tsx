@@ -34,6 +34,7 @@ export const DarkMap: React.FC<DarkMapProps> = ({
           src={yandexEmbedUrl}
           width="100%"
           height="100%"
+          loading="lazy"
           frameBorder="0"
           allowFullScreen
           className="w-full h-full transition-all duration-700"

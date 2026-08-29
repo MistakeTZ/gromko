@@ -48,7 +48,7 @@ html {
 body {
   background-color: var(--black);
   color: var(--white);
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Manrope Variable', 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
   overflow-x: hidden;
   width: 100%;
   position: relative;
@@ -56,7 +56,7 @@ body {
 
 /* Display Font Utility */
 .font-display {
-  font-family: 'Unbounded', sans-serif;
+  font-family: 'Unbounded Variable', 'Unbounded', sans-serif;
 }
 
 /* Subtle Neon Glow Backgrounds */

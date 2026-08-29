@@ -137,6 +137,7 @@ export const MenuPage: React.FC<MenuPageProps> = ({ onOpenBooking }) => {
             <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-text-muted" />
             <input
               type="text"
+              aria-label={currentTab === 'kitchen' ? 'Поиск блюда' : 'Поиск напитка'}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder={currentTab === 'kitchen' ? 'Поиск блюда...' : 'Поиск напитка...'}
@@ -144,6 +145,7 @@ export const MenuPage: React.FC<MenuPageProps> = ({ onOpenBooking }) => {
             />
             {searchQuery && (
               <button
+                aria-label="Очистить поиск"
                 onClick={() => setSearchQuery('')}
                 className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-text-muted hover:text-white"
               >
@@ -156,6 +158,7 @@ export const MenuPage: React.FC<MenuPageProps> = ({ onOpenBooking }) => {
         {/* Tab Content: BAR */}
         {currentTab === 'bar' && (
           <div>
+            <h2 className="sr-only">Барная карта</h2>
             {/* Bar Categories */}
             <div className="flex gap-2 overflow-x-auto pb-4 mb-6 no-scrollbar">
               {barCategories.map((cat) => (
@@ -276,6 +279,7 @@ export const MenuPage: React.FC<MenuPageProps> = ({ onOpenBooking }) => {
         {/* Tab Content: KITCHEN */}
         {currentTab === 'kitchen' && (
           <div>
+            <h2 className="sr-only">Меню кухни</h2>
             {/* Kitchen Categories */}
             <div className="flex gap-2 overflow-x-auto pb-4 mb-6 no-scrollbar">
               {foodCategories.map((cat) => (

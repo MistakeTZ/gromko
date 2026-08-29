@@ -86,11 +86,13 @@ export const DesktopBookingForm: React.FC<DesktopBookingFormProps> = ({
         {/* 1. Дата */}
         <div>
           <div className="flex items-center justify-between mb-2.5">
-            <label className="text-xs font-display font-bold uppercase tracking-wider text-text-secondary flex items-center gap-1.5">
+            <label htmlFor="booking-date" className="text-xs font-display font-bold uppercase tracking-wider text-text-secondary flex items-center gap-1.5 cursor-pointer">
               <Calendar className="w-3.5 h-3.5 text-[#08CEFD]" />
               <span>Дата визита</span>
             </label>
             <input
+              id="booking-date"
+              aria-label="Дата визита"
               type="date"
               value={date}
               min={formatDateVal(today)}
@@ -156,6 +158,7 @@ export const DesktopBookingForm: React.FC<DesktopBookingFormProps> = ({
             <div className="flex items-center gap-2">
               <button
                 type="button"
+                aria-label="Уменьшить количество гостей"
                 onClick={() => setGuests((g) => Math.max(1, g - 1))}
                 className="w-9 h-9 rounded-xl bg-background-soft border border-white/10 text-white font-bold text-base hover:border-neon-pink flex items-center justify-center transition-colors active:scale-95"
               >
@@ -166,6 +169,7 @@ export const DesktopBookingForm: React.FC<DesktopBookingFormProps> = ({
               </div>
               <button
                 type="button"
+                aria-label="Увеличить количество гостей"
                 onClick={() => setGuests((g) => Math.min(30, g + 1))}
                 className="w-9 h-9 rounded-xl bg-background-soft border border-white/10 text-white font-bold text-base hover:border-neon-pink flex items-center justify-center transition-colors active:scale-95"
               >
@@ -178,12 +182,14 @@ export const DesktopBookingForm: React.FC<DesktopBookingFormProps> = ({
         {/* 3. Имя и Телефон */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
           <div>
-            <label className="block text-[11px] font-mono uppercase text-text-muted mb-1">
+            <label htmlFor="booking-name" className="block text-[11px] font-mono uppercase text-text-muted mb-1 cursor-pointer">
               Ваше имя *
             </label>
             <div className="relative">
-              <User className="w-4 h-4 text-text-muted absolute left-3.5 top-1/2 -translate-y-1/2" />
+              <User className="w-4 h-4 text-text-muted absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
               <input
+                id="booking-name"
+                aria-label="Ваше имя"
                 type="text"
                 placeholder="Иван"
                 value={name}
@@ -195,12 +201,14 @@ export const DesktopBookingForm: React.FC<DesktopBookingFormProps> = ({
           </div>
 
           <div>
-            <label className="block text-[11px] font-mono uppercase text-text-muted mb-1">
+            <label htmlFor="booking-phone" className="block text-[11px] font-mono uppercase text-text-muted mb-1 cursor-pointer">
               Телефон *
             </label>
             <div className="relative">
-              <Phone className="w-4 h-4 text-text-muted absolute left-3.5 top-1/2 -translate-y-1/2" />
+              <Phone className="w-4 h-4 text-text-muted absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
               <input
+                id="booking-phone"
+                aria-label="Телефон"
                 type="tel"
                 placeholder="+7 (999) 000-00-00"
                 value={phone}
@@ -214,12 +222,14 @@ export const DesktopBookingForm: React.FC<DesktopBookingFormProps> = ({
 
         {/* 4. Пожелания */}
         <div>
-          <label className="block text-[11px] font-mono uppercase text-text-muted mb-1">
+          <label htmlFor="booking-comment" className="block text-[11px] font-mono uppercase text-text-muted mb-1 cursor-pointer">
             Пожелания к столику (опционально)
           </label>
           <div className="relative">
-            <MessageSquare className="w-4 h-4 text-text-muted absolute left-3.5 top-1/2 -translate-y-1/2" />
+            <MessageSquare className="w-4 h-4 text-text-muted absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
             <input
+              id="booking-comment"
+              aria-label="Пожелания к столику"
               type="text"
               placeholder="Ближе к сцене, день рождения, уютная зона..."
               value={comment}

@@ -20,8 +20,12 @@ export const KitchenMenu: React.FC<KitchenMenuProps> = ({ onOpenFullMenu }) => {
           <div className="lg:col-span-6 relative">
             <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl group cursor-pointer" onClick={() => onOpenFullMenu('kitchen')}>
               <img
-                src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1200&q=80"
+                src="/images/kitchen-hero.webp"
                 alt="Кухня и гастрономия #ГРОМКО"
+                width="900"
+                height="600"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-[460px] sm:h-[580px] object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
@@ -64,9 +68,9 @@ export const KitchenMenu: React.FC<KitchenMenuProps> = ({ onOpenFullMenu }) => {
                     onClick={() => onOpenFullMenu('kitchen')}
                   >
                     <div className="pr-4">
-                      <h4 className="font-display font-bold text-base sm:text-lg text-white group-hover:text-neon-pink transition-colors">
+                      <h3 className="font-display font-bold text-base sm:text-lg text-white group-hover:text-neon-pink transition-colors">
                         {item.name}
-                      </h4>
+                      </h3>
                       {item.description && (
                         <p className="text-xs sm:text-sm text-text-muted mt-1 leading-relaxed line-clamp-2">
                           {item.description}

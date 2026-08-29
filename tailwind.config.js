@@ -29,8 +29,8 @@ export default {
         },
       },
       fontFamily: {
-        display: ['Unbounded', 'sans-serif'],
-        sans: ['Manrope', 'Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        display: ['"Unbounded Variable"', 'Unbounded', 'sans-serif'],
+        sans: ['"Manrope Variable"', 'Manrope', 'Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
       },
       boxShadow: {
         'neon-pink': '0 0 25px -3px rgba(255, 0, 172, 0.45), 0 0 10px -2px rgba(255, 0, 172, 0.3)',

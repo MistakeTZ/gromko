@@ -93,6 +93,10 @@ export const WeeklySchedule: React.FC<WeeklyScheduleProps> = ({ onOpenBooking })
               <img
                 src={selectedDay.image}
                 alt={selectedDay.tagline || selectedDay.fullName}
+                width="800"
+                height="600"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
