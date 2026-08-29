@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <!-- Gradient for Neon Tubes -->
+    <linearGradient id="neonGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF00AC" />
+      <stop offset="50%" stop-color="#9B27FF" />
+      <stop offset="100%" stop-color="#08CEFD" />
+    </linearGradient>
+
+    <!-- Subtle Border Gradient -->
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF00AC" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#08CEFD" stop-opacity="0.8" />
+    </linearGradient>
+
+    <!-- Deep Background Gradient -->
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#1A0B2E" />
+      <stop offset="70%" stop-color="#09090D" />
+      <stop offset="100%" stop-color="#050507" />
+    </radialGradient>
+
+    <!-- Neon Glow Filter -->
+    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="16" result="blur1" />
+      <feGaussianBlur in="SourceGraphic" stdDeviation="30" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur2" />
+        <feMergeNode in="blur1" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="512" height="512" rx="120" fill="url(#bgGlow)" />
+  <rect width="504" height="504" x="4" y="4" rx="116" fill="none" stroke="url(#borderGrad)" stroke-width="6" opacity="0.35" />
+
+  <!-- Ambient Glow in the Center -->
+  <circle cx="256" cy="256" r="140" fill="#FF00AC" opacity="0.2" filter="blur(40px)" />
+  <circle cx="256" cy="256" r="100" fill="#08CEFD" opacity="0.2" filter="blur(30px)" />
+
+  <!-- Hashtag Icon Group with Neon Glow -->
+  <g filter="url(#neonGlow)" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Outer Glow Layer -->
+    <g stroke="url(#neonGradient)" stroke-width="52" opacity="0.6" fill="none">
+      <line x1="205" y1="105" x2="165" y2="407" />
+      <line x1="347" y1="105" x2="307" y2="407" />
+      <line x1="105" y1="205" x2="407" y2="205" />
+      <line x1="105" y1="307" x2="407" y2="307" />
+    </g>
+
+    <!-- Main Vibrant Tube Layer -->
+    <g stroke="url(#neonGradient)" stroke-width="36" fill="none">
+      <line x1="205" y1="105" x2="165" y2="407" />
+      <line x1="347" y1="105" x2="307" y2="407" />
+      <line x1="105" y1="205" x2="407" y2="205" />
+      <line x1="105" y1="307" x2="407" y2="307" />
+    </g>
+
+    <!-- Intense Inner White Core (Neon Lamp Filament) -->
+    <g stroke="#FFFFFF" stroke-width="14" opacity="0.9" fill="none">
+      <line x1="205" y1="105" x2="165" y2="407" />
+      <line x1="347" y1="105" x2="307" y2="407" />
+      <line x1="105" y1="205" x2="407" y2="205" />
+      <line x1="105" y1="307" x2="407" y2="307" />
+    </g>
+  </g>
+</svg>

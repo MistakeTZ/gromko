@@ -52,7 +52,6 @@ export const WeeklySchedule: React.FC<WeeklyScheduleProps> = ({ onOpenBooking })
         <div className="mt-10 grid grid-cols-7 gap-1.5 sm:gap-3">
           {WEEK_SCHEDULE.map((day, idx) => {
             const isSelected = selectedDayIndex === idx;
-            const isToday = currentDayIndex === idx;
 
             return (
               <button
