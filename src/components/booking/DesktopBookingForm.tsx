@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Calendar, Users, Clock, User, Phone, MessageSquare, Sparkles, Check } from 'lucide-react';
+import { Calendar, Users, Clock, User, Phone, MessageSquare, Sparkles } from 'lucide-react';
 import { NeonButton } from '../common/NeonButton';
 import { BookingFormData } from '../../types';
 
@@ -258,7 +258,6 @@ export const DesktopBookingForm: React.FC<DesktopBookingFormProps> = ({
             {isLoading ? 'Оформление брони...' : 'Забронировать стол'}
           </NeonButton>
           <div className="text-center mt-2.5 flex items-center justify-center gap-1.5 text-[11px] text-text-muted font-mono">
-            <Check className="w-3.5 h-3.5 text-emerald-400" />
             <span>Без депозита · Мгновенное подтверждение</span>
           </div>
         </div>

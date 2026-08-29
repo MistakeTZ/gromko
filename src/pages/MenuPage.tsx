@@ -1,9 +1,10 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { MENU_ITEMS, BAR_ITEMS } from '../data/mockData';
 import { FoodCategory, BarCategory } from '../types';
 import { useRouter } from '../context/RouterContext';
 import { Utensils, Wine, Sparkles, Search, ArrowLeft, Calendar } from 'lucide-react';
 import { NeonButton } from '../components/common/NeonButton';
+import { AgeVerificationModal } from '../components/common/AgeVerificationModal';
 
 interface MenuPageProps {
   onOpenBooking: () => void;
@@ -14,6 +15,45 @@ export const MenuPage: React.FC<MenuPageProps> = ({ onOpenBooking }) => {
   const [kitchenCategory, setKitchenCategory] = useState<FoodCategory>('all');
   const [barCategory, setBarCategory] = useState<BarCategory>('all');
   const [searchQuery, setSearchQuery] = useState('');
+
+  // 18+ Age Verification State
+  const [isAgeVerified, setIsAgeVerified] = useState<boolean>(() => {
+    try {
+      return localStorage.getItem('gromko_age_verified') === 'true';
+    } catch {
+      return false;
+    }
+  });
+
+  const [showAgeModal, setShowAgeModal] = useState<boolean>(() => {
+    try {
+      const verified = localStorage.getItem('gromko_age_verified') === 'true';
+      return currentTab === 'bar' && !verified;
+    } catch {
+      return currentTab === 'bar';
+    }
+  });
+
+  useEffect(() => {
+    if (currentTab === 'bar' && !isAgeVerified) {
+      setShowAgeModal(true);
+    }
+  }, [currentTab, isAgeVerified]);
+
+  const handleConfirmAge = () => {
+    try {
+      localStorage.setItem('gromko_age_verified', 'true');
+    } catch (e) {
+      console.warn('LocalStorage not available', e);
+    }
+    setIsAgeVerified(true);
+    setShowAgeModal(false);
+  };
+
+  const handleDeclineAge = () => {
+    setShowAgeModal(false);
+    setMenuTab('kitchen');
+  };
 
   const foodCategories: { id: FoodCategory; label: string }[] = [
     { id: 'all', label: 'Все блюда' },
@@ -133,7 +173,7 @@ export const MenuPage: React.FC<MenuPageProps> = ({ onOpenBooking }) => {
           </div>
 
           {/* Quick Search */}
-          <div className="relative flex-1 max-w-xs">
+          <div className="relative flex-1 w-full sm:max-w-xs">
             <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-text-muted" />
             <input
               type="text"
@@ -159,22 +199,53 @@ export const MenuPage: React.FC<MenuPageProps> = ({ onOpenBooking }) => {
         {currentTab === 'bar' && (
           <div>
             <h2 className="sr-only">Барная карта</h2>
-            {/* Bar Categories */}
-            <div className="flex gap-2 overflow-x-auto pb-4 mb-6 no-scrollbar">
-              {barCategories.map((cat) => (
-                <button
-                  key={cat.id}
-                  onClick={() => setBarCategory(cat.id)}
-                  className={`flex-shrink-0 px-4 py-2 rounded-xl text-xs font-mono font-bold uppercase tracking-wider border transition-all ${
-                    barCategory === cat.id
-                      ? 'bg-[#08CEFD]/15 text-[#08CEFD] border-[#08CEFD] shadow-[0_0_15px_rgba(8,206,253,0.25)]'
-                      : 'bg-surface/60 text-text-muted border-white/5 hover:text-white hover:border-white/20'
-                  }`}
-                >
-                  {cat.label}
-                </button>
-              ))}
-            </div>
+            {!isAgeVerified ? (
+              <div className="py-20 px-6 rounded-3xl bg-surface/50 border border-white/10 text-center max-w-lg mx-auto flex flex-col items-center my-6">
+                <div className="w-20 h-20 rounded-2xl bg-white/5 border border-white/15 flex items-center justify-center mb-5 text-3xl font-display font-black text-neon-pink shadow-[0_0_25px_rgba(255,0,172,0.25)]">
+                  18+
+                </div>
+                <h3 className="text-2xl font-display font-black text-white uppercase mb-3">
+                  Доступ ограничен
+                </h3>
+                <p className="text-xs sm:text-sm text-text-secondary mb-8 leading-relaxed">
+                  Барная карта караоке-бара #ГРОМКО содержит информацию об алкогольной продукции. Для просмотра каталога подтвердите, что вам исполнилось 18 лет.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3 w-full justify-center">
+                  <NeonButton
+                    variant="primary"
+                    size="md"
+                    onClick={() => setShowAgeModal(true)}
+                    icon={<Wine className="w-4 h-4 ml-1" />}
+                  >
+                    Подтвердить возраст (18+)
+                  </NeonButton>
+                  <button
+                    type="button"
+                    onClick={() => setMenuTab('kitchen')}
+                    className="px-5 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-text-secondary hover:text-white text-xs font-display font-bold uppercase tracking-wider transition-all"
+                  >
+                    Перейти в меню кухни
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <>
+                {/* Bar Categories */}
+                <div className="flex gap-2 overflow-x-auto pb-4 mb-6 no-scrollbar">
+                  {barCategories.map((cat) => (
+                    <button
+                      key={cat.id}
+                      onClick={() => setBarCategory(cat.id)}
+                      className={`flex-shrink-0 px-4 py-2 rounded-xl text-xs font-mono font-bold uppercase tracking-wider border transition-all ${
+                        barCategory === cat.id
+                          ? 'bg-[#08CEFD]/15 text-[#08CEFD] border-[#08CEFD] shadow-[0_0_15px_rgba(8,206,253,0.25)]'
+                          : 'bg-surface/60 text-text-muted border-white/5 hover:text-white hover:border-white/20'
+                      }`}
+                    >
+                      {cat.label}
+                    </button>
+                  ))}
+                </div>
 
             {/* Bar Grid with Photos */}
             {filteredBarItems.length === 0 ? (
@@ -273,6 +344,8 @@ export const MenuPage: React.FC<MenuPageProps> = ({ onOpenBooking }) => {
                 })}
               </div>
             )}
+            </>
+          )}
           </div>
         )}
 
@@ -393,6 +466,13 @@ export const MenuPage: React.FC<MenuPageProps> = ({ onOpenBooking }) => {
           </NeonButton>
         </div>
       </div>
+
+      {/* 18+ Age Verification Modal */}
+      <AgeVerificationModal
+        isOpen={showAgeModal}
+        onConfirm={handleConfirmAge}
+        onDecline={handleDeclineAge}
+      />
     </div>
   );
 };

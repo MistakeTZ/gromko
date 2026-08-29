@@ -60,18 +60,6 @@ export const FullMenuModal: React.FC<FullMenuModalProps> = ({
       {/* Main Tab Switcher */}
       <div className="flex items-center justify-center gap-3 pb-6 border-b border-white/10">
         <button
-          onClick={() => setActiveTab('kitchen')}
-          className={`flex items-center gap-2 px-6 py-3 rounded-xl font-display font-bold text-sm tracking-wider uppercase transition-all ${
-            activeTab === 'kitchen'
-              ? 'bg-[#FF00AC] text-white shadow-[0_0_20px_rgba(255,0,172,0.4)]'
-              : 'bg-surface border border-white/10 text-text-secondary hover:text-white'
-          }`}
-        >
-          <Utensils className="w-4 h-4" />
-          <span>Меню Кухни ({MENU_ITEMS.length})</span>
-        </button>
-
-        <button
           onClick={() => setActiveTab('bar')}
           className={`flex items-center gap-2 px-6 py-3 rounded-xl font-display font-bold text-sm tracking-wider uppercase transition-all ${
             activeTab === 'bar'
@@ -80,7 +68,19 @@ export const FullMenuModal: React.FC<FullMenuModalProps> = ({
           }`}
         >
           <Wine className="w-4 h-4" />
-          <span>Барная Карта ({BAR_ITEMS.length})</span>
+          <span>Барная Карта</span>
+        </button>
+
+        <button
+          onClick={() => setActiveTab('kitchen')}
+          className={`flex items-center gap-2 px-6 py-3 rounded-xl font-display font-bold text-sm tracking-wider uppercase transition-all ${
+            activeTab === 'kitchen'
+              ? 'bg-[#FF00AC] text-white shadow-[0_0_20px_rgba(255,0,172,0.4)]'
+              : 'bg-surface border border-white/10 text-text-secondary hover:text-white'
+          }`}
+        >
+          <Utensils className="w-4 h-4" />
+          <span>Меню Кухни</span>
         </button>
       </div>
 

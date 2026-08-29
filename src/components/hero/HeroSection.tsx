@@ -91,7 +91,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
 
           {/* Emotional Statement */}
           <p className="mt-4 text-base sm:text-2xl text-white/80 font-medium italic border-l-2 border-neon-pink pl-4">
-            «{VENUE_INFO.tagline}»
+            {VENUE_INFO.tagline}
           </p>
 
           {/* Primary Action Button (The single dominant neon gradient button) */}

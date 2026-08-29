@@ -1188,7 +1188,7 @@ export const TIME_SLOTS: TimeSlot[] = [
 export const VENUE_INFO = {
   name: '#ГРОМКО',
   subtitle: 'КАРАОКЕ · БАР · PARTY',
-  tagline: 'Тут поют все.',
+  tagline: 'Уютное и музыкальное место в Иваново!',
   logoUrl: '/images/logo.webp',
   city: 'Иваново',
   address: 'ул. 10 Августа, 43',
