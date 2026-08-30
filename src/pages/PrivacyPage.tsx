@@ -12,7 +12,7 @@ import {
   AlertOctagon,
   Sparkles,
 } from "lucide-react";
-import { VENUE_INFO } from "../data/mockData";
+import { VENUE_INFO } from "../data";
 
 export const PrivacyPage: React.FC = () => {
   const { navigate } = useRouter();

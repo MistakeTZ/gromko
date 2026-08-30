@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowRight, Sparkles } from 'lucide-react';
-import { WEEK_SCHEDULE } from '../../data/mockData';
+import { WEEK_SCHEDULE } from '../../data';
 import { NeonButton } from '../common/NeonButton';
 import { WeekDaySchedule } from '../../types';
 
@@ -31,7 +31,7 @@ export const WeeklySchedule: React.FC<WeeklyScheduleProps> = ({ onOpenBooking })
               className="font-display font-black text-white tracking-tight leading-[0.9] uppercase select-none"
               style={{ fontSize: 'clamp(38px, 6vw, 76px)' }}
             >
-              ЭТОЙ НЕДЕЛЕЙ <br />
+              НА ЭТОЙ НЕДЕЛЕ <br />
               <span className="text-neon-gradient">В #ГРОМКО</span>
             </h2>
           </div>

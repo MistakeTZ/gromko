@@ -1,7 +1,7 @@
 import React from "react";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { NeonButton } from "../common/NeonButton";
-import { VENUE_INFO } from "../../data/mockData";
+import { VENUE_INFO } from '../../data';
 
 interface HeroSectionProps {
   onOpenBooking: () => void;

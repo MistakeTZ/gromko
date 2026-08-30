@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
-import { BAR_ITEMS } from '../../data/mockData';
+import { BAR_ITEMS } from '../../data';
 
 interface BarCardProps {
   onOpenFullMenu: (tab?: 'kitchen' | 'bar') => void;

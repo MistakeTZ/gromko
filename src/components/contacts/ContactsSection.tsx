@@ -1,6 +1,6 @@
 import React from 'react';
 import { Phone, Navigation } from 'lucide-react';
-import { VENUE_INFO } from '../../data/mockData';
+import { VENUE_INFO } from '../../data';
 import { DarkMap } from './DarkMap';
 
 export const ContactsSection: React.FC = () => {

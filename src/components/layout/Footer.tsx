@@ -1,5 +1,5 @@
 import React from 'react';
-import { VENUE_INFO } from '../../data/mockData';
+import { VENUE_INFO } from '../../data';
 import { useRouter } from '../../context/RouterContext';
 
 export const Footer: React.FC = () => {

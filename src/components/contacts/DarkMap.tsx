@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Navigation, ExternalLink, ZoomIn, ZoomOut, Layers } from 'lucide-react';
-import { VENUE_INFO } from '../../data/mockData';
+import { VENUE_INFO } from '../../data';
 
 interface DarkMapProps {
   className?: string;

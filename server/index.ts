@@ -1,7 +1,7 @@
 import express from 'express';
 import type { Request, Response } from 'express';
 import cors from 'cors';
-import { WEEK_SCHEDULE, MENU_ITEMS, BAR_ITEMS, GALLERY_PHOTOS, TIME_SLOTS, VENUE_INFO } from '../src/data/mockData.ts';
+import { WEEK_SCHEDULE, MENU_ITEMS, BAR_ITEMS, GALLERY_PHOTOS, TIME_SLOTS, VENUE_INFO } from '../src/data';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -51,7 +51,7 @@ app.get('/api/slots', (req: Request, res: Response) => {
   const dateStr = typeof date === 'string' ? date : new Date().toISOString().split('T')[0];
   const dayHash = dateStr.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
 
-  const slotsWithDynamicStatus = TIME_SLOTS.map((slot, index) => {
+  const slotsWithDynamicStatus = TIME_SLOTS.map((slot: { time: string; available: boolean }, index: number) => {
     // dynamically make 1-2 slots booked based on date hash
     const isBooked = (dayHash + index) % 6 === 0;
     return {

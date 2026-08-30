@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Modal } from '../common/Modal';
-import { MENU_ITEMS, BAR_ITEMS } from '../../data/mockData';
+import { MENU_ITEMS, BAR_ITEMS } from '../../data';
 import { Utensils, Wine, Sparkles } from 'lucide-react';
 import { FoodCategory, BarCategory } from '../../types';
 

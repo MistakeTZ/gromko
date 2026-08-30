@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
-import { MENU_ITEMS } from '../../data/mockData';
+import { MENU_ITEMS } from '../../data';
 
 interface KitchenMenuProps {
   onOpenFullMenu: (tab?: 'kitchen' | 'bar') => void;

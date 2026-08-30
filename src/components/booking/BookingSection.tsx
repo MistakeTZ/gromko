@@ -3,7 +3,7 @@ import { CalendarCheck, ShieldCheck, Clock } from 'lucide-react';
 import { DesktopBookingForm } from './DesktopBookingForm';
 import { MobileBookingFlow } from './MobileBookingFlow';
 import { BookingSuccessModal } from './BookingSuccessModal';
-import { VENUE_INFO } from '../../data/mockData';
+import { VENUE_INFO } from '../../data';
 import { BookingFormData } from '../../types';
 
 export const BookingSection: React.FC = () => {

@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { MENU_ITEMS, BAR_ITEMS } from '../data/mockData';
+import { MENU_ITEMS, BAR_ITEMS } from '../data';
 import { FoodCategory, BarCategory } from '../types';
 import { useRouter } from '../context/RouterContext';
 import { Utensils, Wine, Sparkles, Search, ArrowLeft, Calendar } from 'lucide-react';

@@ -1,4 +1,4 @@
-import type { WeekDaySchedule, MenuItem, BarItem, GalleryPhoto, TimeSlot } from '../types/index.ts';
+import type { WeekDaySchedule, MenuItem, BarItem, GalleryPhoto, TimeSlot } from '../types';
 
 export const WEEK_SCHEDULE: WeekDaySchedule[] = [
   {

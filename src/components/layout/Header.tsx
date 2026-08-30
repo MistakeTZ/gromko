@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu as MenuIcon, X, Phone, Calendar, MapPin, Clock } from 'lucide-react';
 import { NeonButton } from '../common/NeonButton';
-import { VENUE_INFO } from '../../data/mockData';
+import { VENUE_INFO } from '../../data';
 import { useRouter } from '../../context/RouterContext';
 
 interface HeaderProps {

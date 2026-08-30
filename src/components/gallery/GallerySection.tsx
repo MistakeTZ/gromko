@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Maximize2 } from 'lucide-react';
-import { GALLERY_PHOTOS } from '../../data/mockData';
+import { GALLERY_PHOTOS } from '../../data';
 import { GalleryPhoto } from '../../types';
 import { Lightbox } from './Lightbox';
 

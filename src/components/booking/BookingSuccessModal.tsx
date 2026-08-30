@@ -2,7 +2,7 @@ import React from 'react';
 import { Modal } from '../common/Modal';
 import { CheckCircle2, Calendar, Clock, Users, MapPin } from 'lucide-react';
 import { NeonButton } from '../common/NeonButton';
-import { VENUE_INFO } from '../../data/mockData';
+import { VENUE_INFO } from '../../data';
 
 interface BookingSuccessModalProps {
   isOpen: boolean;
