@@ -1203,4 +1203,9 @@ export const VENUE_INFO = {
     lat: 56.995019,
     lng: 40.985989,
   },
+  legalEntity: {
+    name: 'ООО "Палладиум"',
+    inn: '3702731952',
+    ogrn: '1143702014466',
+  },
 };

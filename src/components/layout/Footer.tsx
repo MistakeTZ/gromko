@@ -66,7 +66,11 @@ export const Footer: React.FC = () => {
 
           {/* Bottom copyright & privacy */}
           <div className="mt-12 pt-8 w-full border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-text-muted">
-            <div>© {new Date().getFullYear()} #ГРОМКО Караоке-бар. Все права защищены.</div>
+            <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2">
+              <span>© {new Date().getFullYear()} #ГРОМКО Караоке-бар.</span>
+              <span className="hidden sm:inline">•</span>
+              <span>{VENUE_INFO.legalEntity?.name || 'ООО "Палладиум"'}</span>
+            </div>
             <button
               onClick={() => navigate('/privacy')}
               className="hover:text-text-secondary transition-colors underline underline-offset-4 cursor-pointer"
